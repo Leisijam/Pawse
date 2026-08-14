@@ -1,0 +1,20 @@
+# Swift Package Manager
+Pawse/.build/
+Pawse/.swiftpm/
+
+# 手动打包产物（.app / .zip，通过 GitHub Release 分发，不进仓库）
+Pawse/build/
+
+# 设计素材原始文件（体积大，App 运行不依赖这些，只是源文件）
+Cats/
+
+# Xcode 用户状态（个人本地设置，不应共享）
+Pawse/Pawse.xcodeproj/xcuserdata/
+Pawse/Pawse.xcodeproj/project.xcworkspace/xcuserdata/
+
+# macOS 系统文件
+.DS_Store
+**/.DS_Store
+
+# Claude Code 本地配置
+.claude/
