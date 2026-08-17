@@ -1,6 +1,7 @@
 # Swift Package Manager
 Pawse/.build/
 Pawse/.swiftpm/
+Pawse/.iconbuild/
 
 # 手动打包产物（.app / .zip，通过 GitHub Release 分发，不进仓库）
 Pawse/build/

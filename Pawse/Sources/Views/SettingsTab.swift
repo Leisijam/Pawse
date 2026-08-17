@@ -83,7 +83,16 @@ struct SettingsTab: View {
         panel.canChooseFiles = true
         panel.title = "选择休息动画视频"
 
+        // 菜单栏应用（LSUIElement）默认不能成为前台应用，
+        // 文件选择框会弹到其它窗口后面。临时切换为普通应用并激活，
+        // 选择框关闭后再恢复为菜单栏应用。
+        NSApp.setActivationPolicy(.regular)
+        NSApp.activate(ignoringOtherApps: true)
+
         panel.begin { response in
+            // 无论选择还是取消，都恢复为菜单栏应用策略
+            NSApp.setActivationPolicy(.accessory)
+
             guard response == .OK, let url = panel.url else { return }
             if DataStore.shared.saveCatVideo(from: url) != nil {
                 DataStore.shared.preloadCatVideo()
